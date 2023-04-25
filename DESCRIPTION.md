@@ -11,6 +11,7 @@ Source code is also available at: https://github.com/snowflakedb/snowflake-conne
 - v3.0.4(TBD)
 
   - Fixed a bug that occured when `_prefetch_hook()` was not called before yielding results of `execute_async()`. Contribution from @Kache.
+  - Fixed a bug in which `cursor.execute()` could modify the argument statement_params dictionary object when executing a multistatement query.
 
 - v3.0.3(April 20, 2023)
 
@@ -20,6 +21,7 @@ Source code is also available at: https://github.com/snowflakedb/snowflake-conne
   - Fixed a bug that occurred when writing a Pandas DataFrame with column names containing double quotes in `snowflake.connector.pandas_tool.write_pandas`.
   - Fixed a bug that occurred when writing a Pandas DataFrame with binary data in `snowflake.connector.pandas_tool.write_pandas`.
   - Improved type hint of `SnowflakeCursor.execute` method.
+  - Fail instantly upon receiving `403: Forbidden` HTTP response for a login-request.
   - Improved GET logging to warn when downloading multiple files with the same name.
 
 - v3.0.2(March 23, 2023)
